@@ -15,7 +15,7 @@ def worker(proc_id):
     # get the current time as string
     now = datetime.now().strftime("%H:%M:%S.%f")
 
-    # print the result (no f-strings)
+    # print the result 
     print("Process %s finished after %.4f seconds at %s" % (os.getpid(), delay, now))
 
 
@@ -27,3 +27,4 @@ if __name__ == "__main__":
     for i in range(3):
         p = multiprocessing.Process(target=worker, args=(i,))
         p.start()
+
